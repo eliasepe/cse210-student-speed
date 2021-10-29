@@ -3,6 +3,7 @@ import random
 class Words:
     def __init__(self):
         self.words_list = []
+        self.words_on_screen = []
 
     def importing(self):
         """Import the words.txt file and creates a list with the words in the file"""
@@ -15,6 +16,11 @@ class Words:
         lista = self.words_list
         word = random.choice(lista)
         return word
+
+    def words_on_screen(self):
+        for x in range(1,5):
+            word = self.words.ran_word()
+            self.words_on_screen.append(word)
 
 
 
