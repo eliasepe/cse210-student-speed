@@ -25,10 +25,15 @@ class Director:
         self.words.words_on_screen()
         five_words =  self.words.gen_words
         print(five_words)
-        for word in five_words:
-            coordi = self.coordinates.gen_random()
-            print(coordi)
-            self.output.print_words(word, coordi)
+        
+        coord1 = self.coordinates.gen_random()
+        coord2 = self.coordinates.gen_random()
+        coord3 = self.coordinates.gen_random()
+        coord4 = self.coordinates.gen_random()
+        coord5 = self.coordinates.gen_random()
+
+        coords = [coord1, coord2, coord3, coord4, coord5]
+        self.output.print_words(five_words, coords)
             #screen.print_at(word, coordi[0], coordi[1])
 
 #dire = Director()
