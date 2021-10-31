@@ -10,41 +10,35 @@ class OutputService:
     def __init__(self, screen):
         self.screen = screen
     
-    def print_words(self, words, coords, screen):
+    def print_words(self, words, coords, buffer, screen):
+        repeat = []
         num = 0
-        for coord in coords:
-            word = screen.print_at(words[num], coord[0], coord[1])
-            num += 1
+        if len(words) == 0:
+            screen.print_at("Congrats! You won the game", 30, 10)
+        for word in words:
+            #if words[num] not in repeat:
+            x = screen.print_at(word, (coords[num])[0], (coords[num])[1])
+            if num < len(coords):
+                num += 1
+                #repeat.append(words[num])
+            #elif words[num] in appended:
+            #    break
+        buffer = screen.print_at(f"Buffer: {buffer}-------------------", 0, 20)
+        screen.refresh()
+
+    def reset_buffer(self,screen):
+            buffer = screen.print_at(f"Buffer: -------------------", 0, 20)
+            screen.refresh()
 
         
-        screen.refresh()
-        sleep(99999)
 
-    def refrescar(self):
-        self.screen.refresh()
+    def clean(self,screen):
+        screen.clear()
 
     def sleep(self, time):
         sleep(time)
 
-    """def experiment(self):
-        with ManagedScreen() as screen:
-            centre = (screen.width // 2, screen.height // 2)
-            curve_path = []
-            for i in range(0, 11):
-                curve_path.append(
-                    (centre[0] + (screen.width / 4 * math.sin(i * math.pi / 5)),
-                    centre[1] - (screen.height / 4 * math.cos(i * math.pi / 5))))
-            path = Path()
-            path.jump_to(centre[0], centre[1] - screen.height // 4),
-            path.move_round_to(curve_path, 60)
-            sprite = Sprite(
-                screen,
-                renderer_dict={
-                    "default": StaticRenderer(images=["X"])
-                },
-                path=path,
-                colour=Screen.COLOUR_RED,
-                clear=False)"""
+   
 #os = OutputService()
 #os.print_words("hello world", (1,2))
 
