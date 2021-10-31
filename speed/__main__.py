@@ -11,3 +11,4 @@ print("Remember words can hide sometimes! \n")
 input("Press ENTER twice to start playing")
 
 Screen.wrapper(main)
+input("")
