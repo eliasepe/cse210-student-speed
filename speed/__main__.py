@@ -7,5 +7,7 @@ def main(screen):
     input()
 
 print("Welcome to the speed game:\n\nYou have to see the words and writte them\n")
+print("Remember words can hide sometimes! \n")
 input("Press ENTER twice to start playing")
+
 Screen.wrapper(main)
