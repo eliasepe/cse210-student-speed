@@ -11,15 +11,17 @@ from words import Words
 from coordinates import Coordinates
 """
 class Director:
-    def __init__(self):
+    def __init__(self, screen):
         self.player = Player()
         self.words = Words()
         self.coordinates = Coordinates()
-        self.output = OutputService()
+        self.output = OutputService(screen)
+        self.screen = screen
 
     def start_game(self):
         self.create_board()
         self.words.words_list 
+
 
     def create_board(self): 
         self.words.words_on_screen()
@@ -33,7 +35,7 @@ class Director:
         coord5 = self.coordinates.gen_random()
 
         coords = [coord1, coord2, coord3, coord4, coord5]
-        self.output.print_words(five_words, coords)
+        self.output.print_words(five_words, coords, self.screen)
             #screen.print_at(word, coordi[0], coordi[1])
 
 #dire = Director()

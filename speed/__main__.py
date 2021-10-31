@@ -12,5 +12,8 @@ def main(screen):
 
 Screen.wrapper(main)"""
 
-director = Director()
-director.start_game()
+def main(screen):
+    director = Director(screen)
+    director.start_game()
+
+Screen.wrapper(main)
