@@ -42,7 +42,6 @@ class Director:
             self.output.clean(self.screen)
             
 
-
         
             #screen.print_at(word, coordi[0], coordi[1])
 
